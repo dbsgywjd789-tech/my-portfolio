@@ -1,0 +1,169 @@
+* { box-sizing: border-box; }
+:root {
+  --pink: #f6b4cc; --hot: #9d315c; --ink: #5f154c;
+  --paper: #fff4f8; --yellow: #ffdf42;
+}
+body {
+  margin: 0; padding: 18px 12px; min-height: 100vh;
+  background: var(--pink); color: var(--ink);
+  font-family: Arial, "Noto Sans KR", sans-serif;
+}
+button, input { font: inherit; }
+.site { width: min(100%, 520px); margin: auto; }
+.paper {
+  background: var(--paper); border: 2px solid var(--ink);
+  border-radius: 15px; box-shadow: 4px 5px 0 var(--ink);
+  padding: 19px; margin-bottom: 16px;
+}
+.lock-screen { text-align: center; padding: 28px 18px; }
+.lock-top, .hero-decor { display: flex; justify-content: space-between; align-items: center; font-size: 27px; }
+.bubble {
+  display: inline-block; background: var(--yellow); border: 2px solid var(--ink);
+  border-radius: 30px; padding: 7px 12px; font-size: 10px; font-weight: 900;
+  transform: rotate(-4deg);
+}
+.envelope { font-size: 45px; margin: 20px 0 12px; }
+.big-title {
+  margin: 12px 0; color: var(--hot); text-align: center;
+  font-size: clamp(48px, 13vw, 68px); line-height: .85;
+  letter-spacing: -4px; font-weight: 1000;
+  text-shadow: 3px 3px white, 5px 6px var(--ink);
+}
+.intro { font-size: 13px; font-weight: 800; line-height: 1.7; }
+.tiny { font-size: 9px; font-weight: 900; letter-spacing: 1.5px; }
+.lock-screen .tiny { margin: 19px 0 10px; }
+.lock-screen input {
+  width: 100%; padding: 12px; border: 2px solid var(--ink);
+  border-radius: 9px; background: white;
+}
+.main-button {
+  width: 100%; margin-top: 10px; padding: 12px; cursor: pointer;
+  color: white; background: var(--hot); border: 2px solid var(--ink);
+  border-radius: 12px; font-weight: 900; box-shadow: 3px 3px var(--ink);
+}
+.error { min-height: 15px; color: #d51d68; font-size: 11px; }
+.hero { text-align: center; padding: 20px 4px 17px; }
+.hero .bubble { margin: 10px 0 15px; }
+.emoji-line { font-size: 29px; margin: 13px; }
+.party-details { text-align: center; }
+.party-details h2 { font-size: 23px; margin: 17px 0 12px; }
+.party-details p { font-size: 13px; line-height: 1.6; }
+.dress-code, .info-box {
+  padding: 12px; margin-top: 10px; border: 2px solid var(--ink);
+  border-radius: 10px; background: #ffe4ed; font-size: 12px; font-weight: 900;
+}
+.dress-code { background: var(--yellow); }
+.tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 17px 0; }
+.tab {
+  padding: 9px 4px; border: 2px solid var(--ink); border-radius: 12px;
+  background: #fff8e8; color: var(--ink); box-shadow: 2px 3px var(--ink);
+  font-size: 10px; font-weight: 900; cursor: pointer;
+}
+.tab.active { background: var(--hot); color: white; }
+.page { display: none; }
+.page.active { display: block; }
+.paper h2 { font-size: 24px; letter-spacing: -1px; margin: 7px 0 13px; }
+.paper > p:not(.tiny) { font-size: 13px; line-height: 1.8; font-weight: 600; }
+.info-box span { font-weight: 500; display: inline-block; margin-top: 5px; }
+.footer-message { text-align: center; color: white; font-size: 21px; font-weight: 1000; text-shadow: 2px 2px var(--ink); }
+.schedule-item {
+  display: flex; align-items: center; gap: 12px; padding: 13px 0;
+  border-bottom: 1px dashed #e9a0bd;
+}
+.schedule-item time {
+  min-width: 65px; padding: 9px 5px; text-align: center;
+  background: var(--yellow); border: 2px solid var(--ink);
+  border-radius: 9px; font-size: 11px; font-weight: 900;
+}
+.schedule-item strong { font-size: 13px; }
+.schedule-item small { display: block; margin-top: 5px; font-size: 11px; }
+.helper { font-size: 11px !important; }
+.check-row {
+  display: flex; align-items: center; gap: 9px; padding: 12px 3px;
+  border-bottom: 1px dashed #e9a0bd; font-size: 13px; font-weight: 700;
+}
+.check-row input { width: 17px; height: 17px; accent-color: var(--hot); }
+.progress { text-align: right; margin-top: 14px; }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 12px 4px; }
+.gallery figure {
+  margin: 0; padding: 6px 6px 14px; background: white;
+  border: 2px solid var(--ink); box-shadow: 3px 3px var(--ink);
+  transform: rotate(-3deg);
+}
+.gallery figure:nth-child(even) { transform: rotate(4deg); }
+.gallery img, .photo-placeholder {
+  display: block; width: 100%; height: 110px; object-fit: cover;
+  background: #ffcee0; border-radius: 4px;
+}
+.photo-placeholder { display: flex; align-items: center; justify-content: center; font-size: 43px; }
+.photo-placeholder.yellow { background: var(--yellow); }
+.photo-placeholder.purple { background: #d7c9ff; }
+.photo-placeholder.mint { background: #c4e8df; }
+.gallery figcaption { text-align: center; margin-top: 8px; font-size: 10px; font-weight: 900; }
+.gallery-note { text-align: center; line-height: 1.6; }
+.site-footer { text-align: center; padding: 22px 5px; }
+.site-footer div { font-size: 30px; }
+.site-footer strong { display: block; margin: 8px; color: white; font-size: 23px; text-shadow: 2px 2px var(--ink); }
+@media (min-width: 600px) { body { padding-top: 30px; } }
+
+/* ❄️ 눈 내리는 배경 */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* 눈이 클릭을 방해하지 않게 */
+  z-index: 0;
+}
+
+/* 작은 눈송이 (멀리 있는 눈) */
+body::before {
+  background-image:
+    radial-gradient(3px 3px at 20px 30px, #fff 98%, transparent),
+    radial-gradient(2px 2px at 90px 120px, #fff 98%, transparent),
+    radial-gradient(4px 4px at 160px 60px, #fff 98%, transparent),
+    radial-gradient(2px 2px at 220px 180px, #fff 98%, transparent),
+    radial-gradient(3px 3px at 60px 200px, #fff 98%, transparent);
+  background-size: 250px 250px;
+  animation: snow-small 9s linear infinite;
+}
+
+/* ❄️ 눈 결정 내리는 배경 */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><defs><g id='f' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round'><g id='l'><path d='M0 -18V18M0 -10L-5 -15M0 -10L5 -15M0 10L-5 15M0 10L5 15'/></g><use href='%23l' transform='rotate(60)'/><use href='%23l' transform='rotate(120)'/></g></defs><use href='%23f' transform='translate(40 50) scale(.6)'/><use href='%23f' transform='translate(150 120) scale(.95)'/><use href='%23f' transform='translate(245 45) scale(.45)'/><use href='%23f' transform='translate(80 235) scale(.75)'/><use href='%23f' transform='translate(225 265) scale(.6)'/></svg>");
+}
+
+/* 작은 눈 결정 (멀리) */
+body::before {
+  background-size: 220px 220px;
+  animation: snow-small 7s linear infinite;
+}
+
+/* 큰 눈 결정 (가까이) */
+body::after {
+  background-size: 400px 400px;
+  background-position: 120px 60px;
+  opacity: .85;
+  animation: snow-big 18s linear infinite;
+}
+
+@keyframes snow-small {
+  from { background-position: 0 0; }
+  to   { background-position: 0 220px; }
+}
+@keyframes snow-big {
+  from { background-position: 120px 0; }
+  to   { background-position: 120px 380px; }
+}
+
+.site { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; }
+}
